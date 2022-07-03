@@ -1,0 +1,11 @@
+docker
+build
+coverage
+node_modules
+.vs_code
+**/lib
+**/build
+**/node_modules
+**/tmp
+**/coverage
+test

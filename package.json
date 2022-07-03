@@ -1,0 +1,67 @@
+{
+  "name": "typescript-cli-starter",
+  "version": "1.0.0",
+  "description": "Starter project to create CLI tools",
+  "main": "build/cli.js",
+  "bin": "build/cli.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rimraf build && tsc && chmod +x build/cli.js",
+    "dev": "TS_NODE_FILES=\"true\" node --inspect -r ts-node/register src/cli.ts",
+    "install-cli": "npm i && npm run build && npm link",
+    "prettier": "prettier --write .",
+    "lint": "eslint \"src/**/*.ts\" ",
+    "pre-commit": "lint-staged"
+  },
+  "engines": {
+    "node": ">=16.0"
+  },
+  "engineStrict": true,
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "npm run prettier",
+      "npm run lint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cabezayunke/api-generator.git"
+  },
+  "keywords": [
+    "typescript-cli-starter",
+    "typescript",
+    "cli",
+  ],
+  "author": "Cabeza Yunke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cabezayunke/api-generator/issues"
+  },
+  "homepage": "https://github.com/cabezayunke/api-generator#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chalk": "^5.0.1",
+    "commander": "^9.2.0",
+    "dotenv": "^16.0.0",
+    "faker": "^6.6.6",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.1",
+    "@types/jest": "^27.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
